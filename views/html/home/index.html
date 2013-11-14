@@ -1,0 +1,119 @@
+{% extends '../layout.html' %} 
+    
+    {% block title %}My Page{% endblock %} 
+    
+    {% block head %} {% parent %}
+        <link href="../css/home.css" rel="stylesheet" type="text/css" />
+        <link href="../css/about.css" rel="stylesheet" type="text/css" />
+        <script href="../../js/home.js"></script>
+    {% endblock %} 
+    
+    {% block pageTitle %} {% parent %} {% endblock %}
+    
+        
+    {% block content %}
+        
+        <div class="forgotPasswordDiv">
+            <form class="form-vertical" action="/forgot" method="post">
+                <fieldset>
+                    <legend class="form-group">Forgot Password</legend>
+        
+                    <div class="input-group margin-bottom-sm email">
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <input class="form-control" type="email" placeholder="Email address" name="email" required>
+                    </div>
+                    <div class="remember">
+                        <input type="submit" value="Submit" class="btn" />
+                    </div>
+                    <div class="forgot">
+                        <label class="lbl-text-success">
+                            <a class="btn-link loginLink">Login</a>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        
+        </div>
+        
+        <div class="loginDiv">
+            <form class="form-vertical">
+                <fieldset>
+                    <legend class="form-group">Login</legend>
+        
+                    <div class="input-group margin-bottom-sm name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <input class="form-control" type="text" placeholder="{{Username}}" name="username" required>
+                    </div>
+                    <div class="input-group margin-bottom-sm name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <input class="form-control" type="password" placeholder="{{Password}}" name="password" required>
+                    </div>
+                    <div class="remember">
+                        <input type="submit" value="Submit" class="btn" />
+                    </div>
+        
+                    <div class="forgot">
+                        <label class="lbl-text-success">
+                            <a class="btn-link registerLink">Register</a>
+                            <a class="btn-link forgotPasswordLink">Forgot Password</a>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        
+        </div>
+        
+        <div class="registerDiv">
+            <form class="form-vertical" action="/register" method="post" id='registerForm'>
+                <fieldset>
+                    <legend class="form-group">Register</legend>
+        
+                    <div class="input-group margin-bottom-sm name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <input class="form-control" type="text" placeholder="{{Username}}" name="username" required>
+                    </div>
+                    <div class="input-group margin-bottom-sm name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <input class="form-control" type="text" placeholder="{{Email}}" name="email" required>
+                    </div>
+                    <div class="input-group margin-bottom-sm name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <input class="form-control password" type="password" placeholder="{{Password}}" name="password" required>
+                        <label for="label" id='passwordStrength' class='passwordStrength'>weak</label>
+                    </div>
+                    <div class="input-group margin-bottom-sm name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <input class="form-control" type="password" placeholder="{{ConfirmPassword}}" name="confirmpassword" required>
+                    </div>
+                    <div class="remember">
+                        <input type="submit" class="btn" value="{{submit}}" onclick='validateForm()' />
+                    </div>
+        
+                    <div class="forgot">
+                        <label class="lbl-text-success">
+                            <a class="btn-link loginLink">Login</a>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+         
+         
+         
+    {% endblock %}
+    
+    

@@ -1,0 +1,54 @@
+
+.forgotPasswordDiv, .loginDiv, .registerDiv{
+    background-color: rgba(225, 225, 225, 0.8);
+    width: 450px;
+    height: auto;
+    display: block;
+    margin-left: 30%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: dotted;
+    border-radius:10px;
+    border-color: rgba(0,0,0, 0.4);
+    border-style:inset;
+    border-width: 2px;
+    box-shadow:
+          0 0 0 rgba(0, 0, 0, 0.2),  
+          1px 1px 0 rgba(0, 0, 0, 0.2),
+          3px 3px 0 #fff,
+          4px 4px 0 rgba(0, 0, 0, 0.2),
+          6px 6px 0 #fff,  
+          7px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-vertical {
+    
+    margin:10px;
+    
+}
+
+.lbl-text-success, .lbl-text-warning {
+    width: 100%;
+    text-align: center;
+}
+    
+.lbl-text-success .btn-link {
+    color: #6b5237;
+    text-decoration: underline;
+}
+
+.remember input{
+    margin-left: 130px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    width: 150px;
+    position: inherit;
+    font-family: sans-serif;
+    font-size: medium;
+    background-color: rgba(68, 154, 112, 0.8);
+    color: white;
+}
+
+.input-group .password {
+    width:80%;
+}

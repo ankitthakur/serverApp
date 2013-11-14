@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8" />
+
+    <title>
+        {% block title %}My App{% endblock %}
+    </title>
+
+    <!-- Latest compiled and minified CSS -->
+    <script src="../libs/underscore-min.js"></script>
+    <script src="../libs/backbone-min.js"></script>
+    <script src="../libs/modernizr.min.js"></script>
+    <script src="../libs/jquery.min.js"></script>
+    <script src="../libs/jquery.color-2.1.0.js"></script>
+
+    <link href="../libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../libs/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+    <link href="../libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/layout.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../libs/font-awesome.min.css">
+    <script src="../js/home.js"></script>
+    <script>
+        var scrollSpeed = 70;
+        var step = 1;
+        var current = 0;
+        var imageHeight = 4300;
+        var headerHeight = 300;
+        var restartPosition = -(imageHeight - headerHeight);
+
+        function scrollBg() {
+            current -= step;
+            if (current == restartPosition) {
+                current = 0;
+            }
+            $("body").css("background-position", -current + "px" + " 0");
+
+        }
+        var init = setInterval("scrollBg()", scrollSpeed);
+
+        $('.link first').on('click', function(event) {
+            event.preventDefault();
+            var target = "#" + $(this).data('target');
+            $('html, body').animate({
+                scrollTop: $('.about').offset().top
+            }, 2000);
+        });
+    </script>
+
+    
+
+    {% block head %}{% endblock %}
+
+</head>
+
+<body class="body" id="body">
+
+
+
+    <h1>
+        {% block pageTitle %}{% endblock %}
+    </h1>
+    
+
+    {% block aboutUs %}
+        <div class="aboutUs">
+          <div id="lead-text" class="clearfix">
+
+            <span class="lead-line">Use simple social network for interacting with your</span>
+            <span class="lead-line">friends, family and business partners at a time.</span>
+            <span class="lead-line">Share your clicks and videos with them.</span>
+            <span class="lead-line">Getting bored at home, start find your friends near you.</span>
+            <span class="lead-line">Need to improve your carrier, then start creating your portfolio.</span>
+            <span class="lead-line">Need to share your blogs, here comes the mini blogger.</span>
+            <a class="registerLink"><span class="lead-line">Start a new fresh way to enjoy life.</span></a>
+
+        </div> 
+       </div>
+    {% endblock %}
+    
+    <span class="dropDown">
+        <a class="link first">
+            <i class="fa fa-chevron-down fa-5x"></i>
+        </a>
+    </span>
+    
+    {% block content %}{% endblock %}
+    
+    <div id="bottom">
+        <span class="lead-line">Ankit Thakur ankitthakur85@gmail.com</span>
+   </div>
+</body>
+
+</html>
+

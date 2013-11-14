@@ -1,0 +1,19 @@
+{
+    "name": "serverApp",
+    "version": "0.0.1",
+    "description":"sample application, used to create with different dependencies configuration",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "latest",
+        "consolidate": "latest",
+        "mongoose":"latest",
+        "pg":"latest",
+        "less-middleware":"latest",
+        "reversable-router":"latest",
+        "crypto":"latest",
+        "nodemailer":"latest"
+    }
+}

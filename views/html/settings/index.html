@@ -1,0 +1,65 @@
+{% extends '../layout.html' %} 
+{% block title %}My Page{% endblock %} 
+
+{% block head %} {% parent %}
+<link href="../css/register.css" rel="stylesheet" type="text/css" />
+{% endblock %} 
+
+{% block pageTitle %} {% parent %} {% endblock %} 
+
+{% block content %}
+<script type="text/javascript">
+    
+</script>
+<form class="register" action="/register" method="post" id='registerForm'>
+    <fieldset>
+        <legend id="legend">{{Register}}</legend>
+        <table>
+            <tr id="tr">
+                <td>
+                    <label for="email" class="usernameLabel">{{Username}}</label>
+                </td>
+                <td>
+                    <input type="text" id="username" placeholder="{{username}}" name="username" autofocus required/>
+                </td>
+            </tr>
+            <tr id="tr">
+                <td>
+                    <label for="email" class="emailLabel">{{Email}}</label>
+                </td>
+                <td>
+                    <input type="email" id="email" placeholder="{{email}}" name="email" required/>
+                </td>
+            </tr>
+            <tr id="tr">
+                <td>
+                    <label for="password" class="pswdLabel">{{Password}}</label>
+                </td>
+                <td>
+                    <input type="password" id="pswd" placeholder="{{password}}" name="password" onkeyup="passwordChanged(this.value)" required/>
+                    <span>
+                        <label for="label" id='passwordStrength' id='passwordStrength' value='~'></label>
+                    </span>
+                </td>
+            </tr>
+            <tr id="tr">
+                <td>
+                    <label for="password" class="cpswdLabel">{{ConfirmPassword}}</label>
+                </td>
+                <td>
+                    <input type="password" id="cpswd" placeholder="{{confirmpassword}}" name="confPassword" oninput="validatePassword()" required/>
+                    <br>
+                    <label for="label" id='validPassword' class='validPassword' value='~'></label>
+                </td>
+            </tr>
+            <tr id="tr">
+                <td>
+                    <input type="button" class="btn-submit" value="{{submit}}" onclick='validateForm()' />
+                </td>
+                <td>
+                    <input type="button" class="btn-cancel" value="{{cancel}}" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>{% endblock %}
